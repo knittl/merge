@@ -1,0 +1,11 @@
+merge
+
+Merge two files by ORing corresponding bytes from each file. Useful if you have two incomplete files of the same source file, with blocks of bytes nulled (e.g. from torrents).
+
+    $ xxd -p file1
+    0002000440
+    $ xxd -p file2
+    0100030002
+    $ ./merge file1 file2 > merged-file
+    $ xxd -p merged-file
+    0102030442
